@@ -2,6 +2,8 @@ import React from 'react';
 import ReactCSSTransitionReplace from '../../src/ReactCSSTransitionReplace.jsx';
 
 
+// let cnt = 0;
+
 class ContentAddRemove extends React.Component {
 
   state = {added: false};
@@ -11,7 +13,7 @@ class ContentAddRemove extends React.Component {
   }
 
   render() {
-    const { style = {} } = this.props;
+    const {style = {}} = this.props;
 
     style.cursor = 'pointer';
 
@@ -20,7 +22,9 @@ class ContentAddRemove extends React.Component {
         <a>Click to {this.state.added ? 'remove' : 'add'} content</a><br/>
         <br/>
         <ReactCSSTransitionReplace {...this.props} onClick={this.handleClick}>
-          {this.state.added ? this.props.children : null}
+          {/*<div key={++cnt}>*/}
+            {this.state.added ? this.props.children : null}
+          {/*</div>*/}
         </ReactCSSTransitionReplace>
       </div>
     );

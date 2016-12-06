@@ -174,6 +174,7 @@ export default class ReactCSSTransitionReplace extends React.Component {
   }
 
   performLeave = (key) => {
+    console.log('performLeave', key);
     this.transitioningKeys[key] = true;
     this.refs[key].componentWillLeave(this.handleDoneLeaving.bind(this, key));
     if (!this.state.currentChild) {
